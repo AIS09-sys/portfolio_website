@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>studysync</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+   <link rel="stylesheet" href="media.css">
+   <style>
+    *
+    {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+     
+    .container
+    {
+        padding: 30px 100px;
+    }
+    .navbar
+    {
+        border: 1px ;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+   
+ 
+    .logo
+    {
+        
+        width: 150px;
+        font-size: 20px;
+        
+        
+    }
+    .logo i
+    {
+        color: #6361c3;
+    }
+    .buttons ul
+    {
+        display: none;
+         
+        width: 35%;
+       padding: 5px;
+      
+    }
+     @media screen and (min-width:759px)
+    {
+        .buttons ul
+    {
+        display: flex;
+    
+      
+    }
+    }
+   
+    .buttons ul li
+    {
+        list-style: none;
+    }
+    .buttons ul li a
+    {
+        text-decoration: none;
+       padding: 10px;
+       color:#808791;
+    }
+    .buttons ul li a:hover
+    {
+        color: #6361c3;
+    }
+    .contact
+    {
+        display: none;
+        box-shadow: 2px 2px 3px  ;
+        width: 90px;
+        height: 25px;
+        border-radius: 3px;
+        padding: 3px;
+        background-color:  #504eea ;
+     
+    }
+@media screen and (min-width:759px)
+{
+        .contact
+    {
+        display: block;
+    
+      
+    }
+}
+    .contact a
+    {
+        color: white;
+        text-decoration: none;
+    }
+    .menu_button
+    {
+        display:none;
+        
+
+    }
+    @media screen and (max-width:759px) {
+        .menu_button{
+            display: block;
+            padding: 2px;
+        }
+    }
+
+    .content img
+    {
+        height: 350px;
+        width: 300px;
+        border-radius: 10px;
+    }
+    .content1 .type
+    {
+        width: 80%;
+        white-space: nowrap;
+        border-right: 2px solid black;
+        overflow: hidden;
+   
+        animation: type 8s infinite steps(24),
+                  cursor 6s step-end infinite alternate;
+    }
+    @keyframes cursor {
+        50%
+        {
+            border-color: transparent;
+            
+            
+        }
+        
+    }
+    @keyframes type {
+        from
+        {
+            width: 0;
+           
+        }
+       
+      
+        
+    }
+    .content
+    {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-grow: 2;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    
+    }
+    @media screen and (min-width:759px){
+        .content{
+            
+         flex-direction: row;
+            
+        }
+        
+    }
+    .content1
+    {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 20px;
+      opacity: 0;
+      animation: left 2s ease-out 2s 1 forwards ;
+    }
+    @media screen and (min-width:759px){
+        .content1{
+            
+            align-items: initial;
+          width: 30%;
+           
+            
+        }
+    }
+    @keyframes left {
+        to
+        {
+            opacity: 1;
+             
+        }
+    }
+    .content1 a
+    {
+      border: 1px solid black;
+      color: white;
+      text-decoration: none;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .icons
+    {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 20px;
+    }
+    .icons h3
+    {
+        text-align: center;
+        padding: 10px;
+   
+    }
+    .icon
+    {
+        border: 1px solid #ededec;
+        background-color: #ededec;
+        box-shadow: 3px 3px 3px #ededec;
+        border-radius: 5px ;
+        width: 65%;
+        height: 100%;
+        padding: 25px;
+        display: grid;
+        grid-template-rows: repeat(2,1fr);
+        grid-template-columns: repeat(2,1fr);
+        gap: 40px;
+        opacity: 0;
+        animation: left 2s ease-out 1s 1 forwards ;
+        flex-shrink: 2;
+        
+    }
+    @media screen and (min-width:759px) {
+        .icon
+        {
+         width: 65%; 
+         height: 60px;  
+         padding: 10px;
+         grid-template-columns: repeat(4,1fr);
+        }
+    }
+    @keyframes left {
+        to
+        {
+            opacity: 1;
+        }
+        
+    }
+    .icon i{
+      color: #9296A0;  
+      margin: 10px;
+    }
+     .card
+     {
+         
+        width: 60%;
+        margin: 0px auto;
+        padding: 10px;
+        background-color: #ECECEC;
+       
+       
+
+     }
+     .text 
+     {
+        text-align :center;
+     }
+     .text p
+     {
+        color: #989898;
+     }
+     .text h3
+     {
+        margin-bottom: 10px;
+     }
+    .cards
+    {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        
+            
+        
+    }
+    .cart
+    {
+        height: 140px;
+        width: 80%;
+        border: #3d3e3f 1px solid;
+        margin: 12px auto;
+        border-radius: 8px;
+        text-align: center;
+        padding: 9px;
+        opacity: 0;
+        animation: cards 3s ease-out 1s 1 forwards ;
+    }
+    .cart i
+    {
+        border: 1px ;
+        border-radius: 15px;
+        height: 30px;
+        width: 30px;
+        background-color: white;
+        color: red;
+        font-size: larger;
+        padding: 5px;
+    }
+    @keyframes cards {
+        to
+        {
+            opacity: 1;
+           
+        }
+    }
+    @media screen and (min-width:759px) {
+        .cards
+        {
+             grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(3,170px);
+            gap: 20px;
+           
+        }
+       
+
+        
+    }
+    
+    #card1 
+    {
+        color: white;
+        background-color: #3978D8;
+        box-shadow: 4px 4px 4px black;
+       
+    }
+    #card1
+    {
+        opacity: 0;
+    }
+    #card1 i
+    { 
+      color: #3978D8;
+    }
+     #card2
+    {
+        color: white;
+        background-color: #FF4B72;
+         box-shadow: 4px 4px 4px black;
+    }
+     #card2 i
+    { 
+      color: #FF4B72;
+    }
+     #card3
+    {
+        color: white;
+        background-color: #FAAD44;
+        box-shadow: 4px 4px 4px black;
+    }
+     #card3 i
+    { 
+      color: #FAAD44;
+    }
+     #card4
+    {
+        color: white;
+        background-color: #33AEB1;
+        box-shadow: 4px 4px 4px black;
+    }
+     #card4 i
+    { 
+      color: #33AEB1;
+    }
+     #card5
+    {
+        color: white;
+        background-color: #609C48;
+        box-shadow: 4px 4px 4px black;
+    }
+     #card5 i
+    { 
+      color: #609C48;
+    }
+     #card6
+    {
+        color: white;
+        background-color: #66619D;
+         box-shadow: 4px 4px 4px black;
+    }
+     #card6 i
+    { 
+      color: #66619D;
+    }
+    .testomonial
+    {
+         width: 100%;
+         text-align: center;
+         margin: 20px;
+         padding: 20px;
+    }
+    .testomonial .box
+    {
+        border-right: 3px solid black;
+        width:100%;
+        overflow: hidden;
+        animation: type1 6s 2 steps(4),
+                   cursor1 0.6s step-end infinite alternate;
+        opacity: 1;
+    }
+    @keyframes cursor1 {
+     50%
+     {
+        border-color: transparent;
+     }        
+    }
+    @keyframes type1 {
+    0%
+        {
+            width: 40%;
+            opacity: 0;
+        }
+    25%
+    {
+        width: 100% ;
+    }
+    75%
+    {
+        width: 40%;
+    }
+       
+        
+    }
+    .box
+    {
+       display: flex;
+       flex-direction: column;
+     align-items: center;
+     gap: 20px;
+     
+    
+    }
+    #box1,#box2,#box3
+    {
+        border: 1px solid black;
+        height: 170px;
+        width: 200px;
+        margin: 20px;
+        overflow: hidden;
+    
+    }
+    .box img
+    {
+        height: 30px;
+        width: 40px;
+        border-radius: 15px;
+        margin: 10px;
+        
+    }
+    .box img ,h5 
+    {
+           animation: pic 3s ease 1s 1 forwards ;
+           opacity: 0;
+    }
+    .box p
+    {
+        font-size: 15px ;
+    }
+    @media screen and (min-width:759px) {
+      .box
+    {
+       display: flex;
+       flex-direction: row;
+     justify-content: center;
+     gap: 5px;
+    } 
+        
+    }
+    @keyframes pic {
+        to
+        {
+            opacity: 1;
+        }
+        
+    }
+    .newsslater
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        width: 50%;
+         margin: 0px auto;
+        
+        background-color: #ecedec;
+    }
+    @media screen and (min-width:759px) {
+        .newsslater
+        {
+            flex-direction: row;
+            width: 70%;
+        }
+        
+    }
+    .image img
+    {
+        height: 200px;
+        width: 300px;
+      
+    }
+    .form h3
+    {
+        color: #585be7;
+        
+    }
+    .form input
+    {
+        padding: 5px;
+    }
+    .form p
+    {
+        font-size: 10px;
+        margin: 5px;
+        color: #9296A0;
+        text-align: left;
+    }
+    .form button{
+        background-color: #585be7;
+        border: none;
+        border-radius: 5px;
+        padding: 3px;
+        color: white;
+    }
+    .form p a
+    {
+        color: #3978D8;
+    }
+    .logos
+    {
+        display: flex;
+        height: 200px;
+        width: 90vw;
+        border: none;
+        justify-content: center;
+        margin: 20px;
+        gap: 50px;
+    }
+    .logo2
+    {
+       line-height: 1.9;
+    }
+    #logo
+    {
+        color: #6361C3;
+        font-size: larger;
+    }
+    .links
+    {
+        display: flex;
+        gap: 20px;
+        margin: 10px;
+        line-height: 1.5;
+    }
+    .links a
+    {
+        text-decoration: none;
+        color: #9ca3af;
+        font-size: medium;
+    }
+    .links a:hover
+    {
+        color: #585be7;
+    }
+    .product
+    {
+      display: flex;
+      flex-direction: column;
+    }
+    .company
+    {
+      display: flex;
+      flex-direction: column;
+    }
+    .support
+    {
+      display: flex;
+      flex-direction: column;
+    }
+    .legal
+    {
+        display: flex;
+        flex-direction: column;
+
+    }
+    .logos
+    {
+        display: flex;
+        flex-direction: column;
+        margin: 100px auto;
+        flex-shrink: 4;
+     
+
+    }
+    @media screen and (min-width:759px) {
+     .logos
+     {
+         display: flex;
+         flex-direction: row;
+    
+        
+     }        
+    }
+    footer
+    {
+        border-top: 1px solid lightgray;
+        padding: 10px;
+        text-align: center;
+        color: #989898;
+    }
+   </style>
+</head>
+<body>
+    <div class="maincontainer">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                   <i class="fa-solid fa-pen-nib"></i>
+                    <span><b>StudySync</b></span>
+
+                </div>
+                <div class="buttons">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#Feature">Feature</a></li>
+                        <li><a href="#Pricing">Pricing</a></li>
+                        <li><a href="#Blog">Blog</a></li>
+                        <li><a href="#About">About</a></li>
+                    </ul>
+
+                </div>
+                <div class="contact">
+                    <a href="#contact">Contact Us</a>
+                </div>
+                <button class="menu_button"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content1">
+                <p style="color: #6361c3" class="type"> very proud to introduce</p>
+                <h1>seamless learning<br>for bright future</h1>
+                <p style="color:#808791">Learning is becoming increasingly seamless and personalized, with AI, VR, and cloud technologies enabling students to access content anytime, anywhere. </p>
+                <div class="buttom">
+                    <a href="#" style="background-color: #504eea;">Start Now</a>
+                    <a href="#" style="background-color:#3d3e3f">Take Tour</a>
+                </div>
+            </div>
+            <img src="/image/color.jpg" alt="error">
+        </div>
+        <div class="icons">
+            <h3>Trusted by the best</h3>
+            <div class="icon">
+                <i class="fa-brands fa-google">Google</i>
+                <i class="fa-brands fa-microsoft">Microsoft</i>
+                <i class="fa-brands fa-linkedin">Linkdin</i>
+                <i class="fa-regular fa-square">VectorEdu</i>
+            </div>
+        </div>
+         <div class="card">
+            <div class="text">
+                <h3>Our Competative Advantages</h3>
+                <p>Our platform stands out by combining advanced technology with a user-friendly experience.</p>
+            </div>
+            <div class="cards">
+                <div class="cart" id="card1">
+                  <i class="fa-solid fa-lightbulb"></i>
+                  <h3>Personalize Learning</h3>
+                  <p>Personalized learning focuses on the individual and inclusive every student learns differently.</p>
+                </div>
+                <div class="cart"id="card2">
+                    <i class="fa-solid fa-money-bill"></i>
+                    <h3>Affordability</h3>
+                    <p>Learning solutions are cost-effective and accessible to all students.</p>
+                </div>
+                <div class="cart" id="card3">
+                    <i class="fa-solid fa-handshake"></i>
+                    <h3>Industry Partners</h3>
+                    <p>Collaboration with industry ensures relevant, real-world skills.</p>
+                </div>
+                <div class="cart" id="card4">
+                    <i class="fa-solid fa-computer"></i>
+                    <h3>Innovative Technology</h3>
+                    <p>Uses modern and advanced technology to improve learning experiences.</p>
+                </div>
+                <div class="cart" id="card5">
+                    <i class="fa-solid fa-phone"></i>
+                    <h3>Responsive Support</h3>
+                    <p>Provides timely help and guidance whenever learners need it.</p>
+                </div>
+                <div class="cart" id="card6">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Analytic and Insights</h3>
+                    <p>Uses data to track progress and improve learning outcomes.</p>
+                </div>
+            </div>
+         </div>
+         <div class="testomonial">
+            <h3>What Other Say About Us</h3>
+            <div class="box">
+                <div id="box1">
+                    <p>StudySinc makes learning easy and personalized with its smart AI guidance.</p>
+                    <img src="/image/1st_pic.jpg" alt="error">
+                    <h5>MR.anuj roka</h5>
+                    <p>teacher</p>
+                </div>
+                <div id="box2">
+                    <p>I love how StudySinc combines technology and interactivity for effective studying.</p>
+                    <img src="/image/3rd_img.jpg" alt="error">
+                    <h5>MSS.Anita manander</h5>
+                    <p>parent</p>
+                    
+                </div>
+                <div id="box3">
+                    <p>With StudySinc, I can learn at my own pace and stay fully engaged.</p>
+                    <img src="/image/2nd_pic.jpg" alt="error">
+                    <h5>MR.aarjan thapa</h5>
+                    <p>social administor</p>
+                </div>
+            </div>
+         </div>
+         <div class="newsslater">
+            <div class="image">
+                <img src="/image/color.jpg">
+            </div>
+            <div class="form">
+                <h3>Get The Letest Updates</h3>
+                <p>Sign for our new slatter</p>
+                <form>
+                    <input type="email" class="email" placeholder="E-mail">
+                    <button type="submit">send</button>
+                </form>
+                    <p>By signing out newsslatter yo have to agree our <a href="#">Terms and Codition</a> and <a href="#">our privacy</a>.</p>
+             
+            </div>
+         </div>
+         <div class="foter">
+            <div class="logos">
+                 <div class="logo2">
+                   <i class="fa-solid fa-pen-nib" id="logo"></i>
+                    <span><b>StudySync</b></span>
+                    <p>Seemless for bright future</p>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-github"></i>
+            </div>
+            <div class="links">
+                <div class="product">
+                    <h4>Products</h4>
+                    <a href="#">overview</a>
+                    <a href="#">solutions</a>
+                    <a href="#">pricing</a>
+                    <a href="#">customers</a>
+                </div>
+                <div class="company">
+                    <h4>company</h4>
+                    <a href="#">about</a>
+                    <a href="#">Investor Relation</a>
+                    <a href="#">Jobs</a>
+                    <a href="#">Press</a>
+                    <a href="#">Blogs</a>
+                </div>
+                <div class="support">
+                    <h4>Support</h4>
+                    <a href="#">contact</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Chats</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="legal">
+                    <h4>Legal</h4>
+                    <a href="#">Termas of Services</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookies System</a>
+                </div>
+            </div>
+         </div>
+    </div>
+    <footer>@2025-Present studysync. all right reserved</footer>
+    
+</body>
+</html>
