@@ -7,12 +7,12 @@
     scroll-behavior: smooth;
     
 }
-:root
-{
-    --bg-color: #1f242d;
-    --second-bg-color:#323946;
-    --text-color: #fff;
-    --main-color: #0ef;
+:root {
+  --color-bg-main: #FFFDF6;
+  --color-bg-secondary: #FAF6E9;
+  --color-accent-light: #DDEB9D;
+  --color-accent-dark: #A0C878;
+  --color-text: #333; /* a dark gray for readability */
 }
 html
 {
@@ -21,7 +21,7 @@ html
 }
 body
 {
-    background-color: var(--bg-color);
+    background-color: var(--color-bg-color);
     color: var(--text-color);
 }
 .head
@@ -31,7 +31,7 @@ body
     left: 0;
     width: 100%;
     padding: 2rem 9%;
-    background-color: var(--bg-color);
+    background-color: var(--color-bg-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,7 +45,7 @@ section
 .logo
 {
     font-size: 2.5rem;
-    color: var(--text-color);
+    color: var(--color-text);
     font-weight: 600;
     cursor: default;
     text-decoration: none;
@@ -54,14 +54,14 @@ section
 {
     text-decoration: none;
     font-size: 1.7rem;
-    color: var(--text-color);
+    color: var(--color-text);
     margin-left: 4rem;
     transition: all .3s;
 }
 .navbar a:hover,
 .navbar a.active
 {
-    color: var(--main-color);
+    color: var(--color-accent-light);
 }
 #menu_icon
 {
@@ -103,27 +103,27 @@ section
     width: 4rem;
     height: 4rem;
     background: transparent;
-    border: .2rem solid var(--main-color);
+    border: .2rem solid var(--color-accent-dark);
     border-radius: 50%;
     font-size: 2rem;
      margin: 3rem 1.5rem 3rem 0;
-    color: var(--main-color);
+    color: var(--color-accent-dark);
     transition: .8s ease;
 
 }
 .home-content i:hover
 {
-    background: var(--main-color);
-    color: var(--second-bg-color);
-    box-shadow: 0 0 1rem var(--main-color);
+    background: var(--color-accent-dark);
+    color: var(--color-accent-light);
+    box-shadow: 0 0 1rem var(--color-accent-light);
 }
 .btn
 {
     display: inline-block;
     padding: 1rem 2.3rem;
-    background-color: var(--main-color);
+    background-color: var(--color-accent-dark);
     border-radius: 4rem;
-    box-shadow: 0 0 1rem var(--main-color);
+    box-shadow: 0 0 1rem var(--color-accent-light);
     text-decoration: none;
     font-size: 1.3rem;
     color: var(--second-bg-color);
@@ -144,7 +144,7 @@ section
 }
 span
 {
-    color: var(--main-color);
+    color: var(--color-accent-dark);
 }
 .home-content h1
 {
@@ -168,7 +168,7 @@ span
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    background-color: var(--second-bg-color);
+    background-color: var(--color-bg-secondary);
 
 }
 .heading
@@ -212,13 +212,13 @@ span
 }
 .service-content .service-card
 {
-    border: .7px solid var(--second-bg-color);
+    border: .7px solid var(--color-bg-secondary);
     height: 230px;
     width: 200px;
     text-align: center;
     padding: 1.2rem;
-    box-shadow: 0 0 1.3rem var(--second-bg-color);
-    background-color: var(--second-bg-color);
+    box-shadow: 0 0 1.3rem var();
+    background-color: var(--color-bg-secondary);
     border-radius: 10%;
     margin: 10px;
 }
@@ -235,6 +235,6 @@ span
 .service-card i
 {
     font-size: 2.6rem;
-    color: var(--main-color);
+    color: var(--color-accent-dark);
     margin: 4.9px;
 }
