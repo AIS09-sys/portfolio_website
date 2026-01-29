@@ -217,6 +217,7 @@ span
     width: 200px;
     text-align: center;
     padding: 1.2rem;
+    box-shadow: 0 0 1.3rem var(--second-bg-color);
     background-color: var(--second-bg-color);
     border-radius: 10%;
     margin: 10px;
